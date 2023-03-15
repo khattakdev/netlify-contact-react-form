@@ -2,11 +2,12 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <div className="container">
-      <form name="contact" data-netlify="true">
+      <form name="contact" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <div className="input">
           <label for="name">Name</label>
