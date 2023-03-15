@@ -7,11 +7,18 @@ function App() {
 
   return (
     <div className="container">
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST">
         <input type="hidden" name="form-name" value="contact" />
         <div className="input">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="input">
           <label for="message">Message</label>
@@ -19,6 +26,8 @@ function App() {
             name="message"
             id="message"
             placeholder="Your Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </div>
         <button type="submit">Send Message</button>
